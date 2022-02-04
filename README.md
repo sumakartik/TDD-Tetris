@@ -1,24 +1,29 @@
 # GUIDING PRINCIPLES:
+
 ## The Three Rules of TDD
+
 - Write production code only to pass a failing unit test
 - Write no more of a unit test than sufficient to fail (compilation failures are failures)
 - Write no more production code than necessary to pass the one failing unit test
 
 ## Proverbs:
+
 - If it ain’t broke: don’t fix it
-- Make it work, *then* make it fast
+- Make it work, _then_ make it fast
 
 ## Red > Green > Refactor
+
 - First think about WHAT you're doing
 - Then think about HOW
 - Finally, think about IMPROVEMENT
 
 ## How to read a test
-- Look for the *ARRANGE* step - what is it doing?
-- See what the intention is in the *ACT* step - 
+
+- Look for the _ARRANGE_ step - what is it doing?
+- See what the intention is in the _ACT_ step -
   - What methods get called?
   - What argument are passed?
-- What is measured by the *ASSERT* step? 
+- What is measured by the _ASSERT_ step?
   - How is it measured - what is the expectation?
   - What methods get called?
   - What arguments are passed?
@@ -33,9 +38,8 @@ it's time to write your own tests in the latter part of this exercise.
 The instructions on what to do are in the [docs directory](docs/). This exercise is split into 10 "levels" which you
 should implement in order. They represent a realistic TDD approach of adding features incrementally.
 
-This exercise uses [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript) (ES6/ECMAScript 2015),
-[Mocha](https://mochajs.org/) testing framework and [Chai](https://www.chaijs.com/)
-assertions, but the concepts are language agnostic. It would be quite easy to translate the example tests to another
+This exercise uses [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript) (ES6+) and [Jest](https://jestjs.io/),
+but the concepts are language agnostic. It would be quite easy to translate the example tests to another
 programming language as you go. There also exists an
 older [Java-based predecessor](https://github.com/luontola/tdd-tetris-tutorial) of this exercise.
 
