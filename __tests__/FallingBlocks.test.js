@@ -1,4 +1,3 @@
-import { expect } from "chai";
 import { Board } from "../src/Board.mjs";
 import { Block } from "../src/Block.mjs";
 
@@ -9,7 +8,7 @@ describe("Falling blocks", () => {
   });
 
   it("The board starts empty", () => {
-    expect(board.toString()).to.equalShape(
+    expect(board.toString()).toEqualShape(
       `...
        ...
        ...`
@@ -23,7 +22,7 @@ describe("Falling blocks", () => {
     });
 
     it("it starts from the top middle", () => {
-      expect(board.toString()).to.equalShape(
+      expect(board.toString()).toEqualShape(
         `.X.
          ...
          ...`
@@ -33,7 +32,7 @@ describe("Falling blocks", () => {
     xit("it moves down one row per tick", () => {
       board.tick();
 
-      expect(board.toString()).to.equalShape(
+      expect(board.toString()).toEqualShape(
         `...
          .X.
          ...`
@@ -58,7 +57,7 @@ describe("Falling blocks", () => {
     });
 
     it("it is still moving on the last row", () => {
-      expect(board.toString()).to.equalShape(
+      expect(board.toString()).toEqualShape(
         `...
          ...
          .X.`
@@ -72,7 +71,7 @@ describe("Falling blocks", () => {
     xit("it stops when it hits the bottom", () => {
       board.tick();
 
-      expect(board.toString()).to.equalShape(
+      expect(board.toString()).toEqualShape(
         `...
          ...
          .X.`
@@ -94,7 +93,7 @@ describe("Falling blocks", () => {
     });
 
     it("it is still moving on the row above the other block", () => {
-      expect(board.toString()).to.equalShape(
+      expect(board.toString()).toEqualShape(
         `...
          .Y.
          .X.`
@@ -108,7 +107,7 @@ describe("Falling blocks", () => {
     xit("it stops when it hits the other block", () => {
       board.tick();
 
-      expect(board.toString()).to.equalShape(
+      expect(board.toString()).toEqualShape(
         `...
          .Y.
          .X.`

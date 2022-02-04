@@ -1,5 +1,5 @@
 /*
-import { expect } from "chai";
+
 import { Tetromino } from "../src/Tetromino.mjs";
 
 function distinctOrientations(shape) {
@@ -19,7 +19,7 @@ describe("The T shape", () => {
   const shape = Tetromino.T_SHAPE;
 
   it("initial orientation", () => {
-    expect(shape.toString()).to.equalShape(
+    expect(shape.toString()).toEqualShape(
       `.T.
        TTT
        ...`
@@ -27,7 +27,7 @@ describe("The T shape", () => {
   });
 
   xit("can be rotated right/clockwise", () => {
-    expect(shape.rotateRight().toString()).to.equalShape(
+    expect(shape.rotateRight().toString()).toEqualShape(
       `.T.
        .TT
        .T.`
@@ -35,7 +35,7 @@ describe("The T shape", () => {
   });
 
   xit("can be rotated left/counter-clockwise", () => {
-    expect(shape.rotateLeft().toString()).to.equalShape(
+    expect(shape.rotateLeft().toString()).toEqualShape(
       `.T.
        TT.
        .T.`
@@ -53,7 +53,7 @@ describe("The I shape", () => {
   const shape = Tetromino.I_SHAPE;
 
   it("initial orientation", () => {
-    expect(shape.toString()).to.equalShape(
+    expect(shape.toString()).toEqualShape(
       `.....
        .....
        IIII.
@@ -63,7 +63,7 @@ describe("The I shape", () => {
   });
 
   xit("can be rotated right/clockwise", () => {
-    expect(shape.rotateRight().toString()).to.equalShape(
+    expect(shape.rotateRight().toString()).toEqualShape(
       `..I..
        ..I..
        ..I..
@@ -73,7 +73,7 @@ describe("The I shape", () => {
   });
 
   xit("can be rotated left/counter-clockwise", () => {
-    expect(shape.rotateLeft().toString()).to.equalShape(
+    expect(shape.rotateLeft().toString()).toEqualShape(
       `..I..
        ..I..
        ..I..
@@ -93,7 +93,7 @@ describe("The O shape", () => {
   const shape = Tetromino.O_SHAPE;
 
   it("initial orientation", () => {
-    expect(shape.toString()).to.equalShape(
+    expect(shape.toString()).toEqualShape(
       `.OO
        .OO
        ...`
@@ -101,7 +101,7 @@ describe("The O shape", () => {
   });
 
   xit("cannot be rotated right/clockwise", () => {
-    expect(shape.rotateRight().toString()).to.equalShape(
+    expect(shape.rotateRight().toString()).toEqualShape(
       `.OO
        .OO
        ...`
@@ -109,7 +109,7 @@ describe("The O shape", () => {
   });
 
   xit("cannot be rotated left/counter-clockwise", () => {
-    expect(shape.rotateLeft().toString()).to.equalShape(
+    expect(shape.rotateLeft().toString()).toEqualShape(
       `.OO
        .OO
        ...`

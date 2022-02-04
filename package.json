@@ -1,5 +1,6 @@
 {
   "name": "tdd-mooc-tetris",
+  "type": "module",
   "version": "1.0.0-SNAPSHOT",
   "description": "Exercise for learning Test-Driven Development",
   "homepage": "https://github.com/luontola/tdd-mooc-tetris",
@@ -17,9 +18,9 @@
     "lodash": "^4.17.15"
   },
   "devDependencies": {
-    "chai": "^4.2.0",
-    "mocha": "^8.4.0",
-    "prettier": "^2.3.0"
+    "@types/jest": "^27.4.0",
+    "jest": "^27.4.7",
+    "jest-matcher-utils": "^27.4.6"
   },
   "engines": {
     "node": ">=16.0.0",
@@ -29,7 +30,7 @@
     "parallel": true
   },
   "scripts": {
-    "test": "mocha --require test/testing.mjs 'test/**/*.test.mjs'",
+    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js",
     "autotest": "npm run test -- --watch",
     "format": "prettier --write ."
   }

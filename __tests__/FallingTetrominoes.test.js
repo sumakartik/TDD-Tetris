@@ -1,5 +1,5 @@
 /*
-import { expect } from "chai";
+
 import { Board } from "../src/Board.mjs";
 import { Tetromino } from "../src/Tetromino.mjs";
 
@@ -18,7 +18,7 @@ describe("Falling tetrominoes", () => {
   it("start from the top middle", () => {
     board.drop(Tetromino.T_SHAPE);
 
-    expect(board.toString()).to.equalShape(
+    expect(board.toString()).toEqualShape(
       `....T.....
        ...TTT....
        ..........
@@ -32,7 +32,7 @@ describe("Falling tetrominoes", () => {
     board.drop(Tetromino.T_SHAPE);
     fallToBottom(board);
 
-    expect(board.toString()).to.equalShape(
+    expect(board.toString()).toEqualShape(
       `..........
        ..........
        ..........
@@ -48,7 +48,7 @@ describe("Falling tetrominoes", () => {
     board.drop(Tetromino.T_SHAPE);
     fallToBottom(board);
 
-    expect(board.toString()).to.equalShape(
+    expect(board.toString()).toEqualShape(
       `..........
        ..........
        ....T.....
