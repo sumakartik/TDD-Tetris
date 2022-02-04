@@ -8,6 +8,7 @@ describe("Falling blocks", () => {
   });
 
   it("The board starts empty", () => {
+
     expect(board.toString()).toEqualShape(
       `...
        ...
@@ -20,7 +21,7 @@ describe("Falling blocks", () => {
       board.drop(new Block("X"));
     });
 
-    xit("it starts from the top middle", () => {
+    it("it starts from the top middle", () => {
       expect(board.toString()).toEqualShape(
         `.X.
          ...
@@ -42,7 +43,7 @@ describe("Falling blocks", () => {
       const before = board.toString();
       expect(() => board.drop(new Block("Y"))).to.throw("already falling");
       const after = board.toString();
-      expect(after).to.equal(before);
+      expect(after).toEqual(before); // TODO: check conversion
     });
   });
 
@@ -62,7 +63,7 @@ describe("Falling blocks", () => {
       expect(
         board.hasFalling(),
         "the player should still be able to move the block"
-      ).to.be.true;
+      ).to.be.true; // TODO: check if toBe
     });
 
     xit("it stops when it hits the bottom", () => {
