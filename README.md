@@ -1,33 +1,3 @@
-# GUIDING PRINCIPLES:
-
-## The Three Rules of TDD
-
-- Write production code only to pass a failing unit test
-- Write no more of a unit test than sufficient to fail (compilation failures are failures)
-- Write no more production code than necessary to pass the one failing unit test
-
-## Proverbs:
-
-- If it ain’t broke: don’t fix it
-- Make it work, _then_ make it fast
-
-## Red > Green > Refactor
-
-- First think about WHAT you're doing
-- Then think about HOW
-- Finally, think about IMPROVEMENT
-
-## How to read a test
-
-- Look for the _ARRANGE_ step - what is it doing?
-- See what the intention is in the _ACT_ step -
-  - What methods get called?
-  - What argument are passed?
-- What is measured by the _ASSERT_ step?
-  - How is it measured - what is the expectation?
-  - What methods get called?
-  - What arguments are passed?
-
 # [TDD MOOC](https://tdd.mooc.fi): Tetris
 
 In this exercise you will be implementing a Tetris game using Test-Driven Development (TDD). The first couple dozen
@@ -40,15 +10,17 @@ should implement in order. They represent a realistic TDD approach of adding fea
 
 This exercise uses [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript) (ES6+) and [Jest](https://jestjs.io/),
 but the concepts are language agnostic. It would be quite easy to translate the example tests to another
-programming language as you go. There also exists an
-older [Java-based predecessor](https://github.com/luontola/tdd-tetris-tutorial) of this exercise.
+programming language as you go. This Jest version was modified by James Kelley (who is to blame for any errors) from the original
+[Mocha/Chai version](https://github.com/luontola/tdd-mooc-tetris).
 
-Refer to [the course material](https://tdd.mooc.fi) to learn more about TDD.
+There also exists an older [Java-based predecessor](https://github.com/luontola/tdd-tetris-tutorial) of this exercise.
+
+Refer to [the original course material](https://tdd.mooc.fi) to learn more about TDD and this exercise.
 
 ---
 
-_This exercise is part of the [TDD MOOC](https://tdd.mooc.fi) at the University of Helsinki, brought to you
-by [Esko Luontola](https://twitter.com/EskoLuontola) and [Nitor](https://nitor.com/)._
+_This exercise is modified from an original that is part of the [TDD MOOC](https://tdd.mooc.fi) at the University of Helsinki,
+brought to you by [Esko Luontola](https://twitter.com/EskoLuontola) and [Nitor](https://nitor.com/)._
 
 ## 🚀 [Start the exercise](docs/level-1.md)
 
@@ -71,3 +43,34 @@ Run tests continuously
 Code reformat
 
     npm run format
+
+# GUIDING PRINCIPLES:
+
+## The Three Rules of TDD
+
+- Write production code only to pass a failing unit test
+- Write no more of a unit test than sufficient to fail (compilation failures are failures)
+- Write no more production code than necessary to pass the one failing unit test
+
+## Proverbs:
+
+- If it ain’t broke: don’t fix it
+- Make it work, _then_ make it fast
+
+## Red > Green > Refactor
+
+- RED: First, think about WHAT you're doing
+- GREEN: Then, think about HOW
+- REFACTOR: Finally, think about CLEANUP and/or IMPROVEMENT
+
+## How to read a test
+
+- Look for the _ARRANGE_ step - what is being prepared?
+- See what the test's intention is in the _ACT_ step -
+  - What methods get called?
+  - What arguments are passed?
+- What is measured by the _ASSERT_ step?
+  - How is it measured - what is the expectation?
+  - What methods get called?
+  - What arguments are passed?
+  - What test matchers are used?
