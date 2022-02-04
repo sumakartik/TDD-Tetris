@@ -192,5 +192,5 @@ export default {
   // Whether to use watchman for file crawling
   // watchman: true,
   transform: {},
-  setupFilesAfterEnv: ["./__tests__/setupJest.js"],
+  setupFilesAfterEnv: ["./setupJest.js"],
 };
