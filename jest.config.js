@@ -192,6 +192,6 @@ export default {
   // Whether to use watchman for file crawling
   // watchman: true,
   transform: {},
-  setupFilesAfterEnv: ["./setupJest.js"],
+  setupFilesAfterEnv: ["./__tests__/setupJest.js"],
   testRegex: "(/__tests__/.*|(\\.|/)(test|spec))\\.(mjs?|jsx?|js?|tsx?|ts?)$",
 };
