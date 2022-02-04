@@ -31,7 +31,6 @@
   },
   "scripts": {
     "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js",
-    "autotest": "npm run test --watchAll",
-    "format": "prettier --write ."
+    "autotest": "npm run test --watchAll"
   }
 }
