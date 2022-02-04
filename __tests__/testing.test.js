@@ -1,4 +1,4 @@
-import { normalize } from "./testing.mjs";
+import { normalize } from "./normalize.mjs";
 
 it("normalize", () => {
   expect(normalize("")).toEqual("\n");
