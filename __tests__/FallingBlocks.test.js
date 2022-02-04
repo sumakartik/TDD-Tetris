@@ -15,12 +15,12 @@ describe("Falling blocks", () => {
     );
   });
 
-  describe("When a block is dropped", () => {
+  xdescribe("When a block is dropped", () => {
     beforeEach(() => {
       board.drop(new Block("X"));
     });
 
-    it("it starts from the top middle", () => {
+    xit("it starts from the top middle", () => {
       expect(board.toString()).toEqualShape(
         `.X.
          ...
@@ -46,14 +46,14 @@ describe("Falling blocks", () => {
     });
   });
 
-  describe("When a block reaches the bottom", () => {
+  xdescribe("When a block reaches the bottom", () => {
     beforeEach(() => {
       board.drop(new Block("X"));
       board.tick();
       board.tick();
     });
 
-    it("it is still moving on the last row", () => {
+    xit("it is still moving on the last row", () => {
       expect(board.toString()).toEqualShape(
         `...
          ...
@@ -77,7 +77,7 @@ describe("Falling blocks", () => {
     });
   });
 
-  describe("When a block lands on another block", () => {
+  xdescribe("When a block lands on another block", () => {
     beforeEach(() => {
       board.drop(new Block("X"));
       board.tick();
@@ -87,7 +87,7 @@ describe("Falling blocks", () => {
       board.tick();
     });
 
-    it("it is still moving on the row above the other block", () => {
+    xit("it is still moving on the row above the other block", () => {
       expect(board.toString()).toEqualShape(
         `...
          .Y.

@@ -7,7 +7,7 @@ xdescribe("Rotating 3x3 shape", () => {
      GHI`
   );
 
-  it("initial orientation", () => {
+  xit("initial orientation", () => {
     expect(shape.toString()).toEqualShape(
       `ABC
        DEF
@@ -41,7 +41,7 @@ xdescribe("Rotating 5x5 shape", () => {
      UVWXY`
   );
 
-  it("initial orientation", () => {
+  xit("initial orientation", () => {
     expect(shape.toString()).toEqualShape(
       `ABCDE
        FGHIJ
