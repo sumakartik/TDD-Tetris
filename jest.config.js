@@ -193,5 +193,4 @@ export default {
   // watchman: true,
   transform: {},
   setupFilesAfterEnv: ["./__tests__/setupJest.js"],
-  testRegex: "(/__tests__/.*|(\\.|/)(test|spec))\\.(mjs?|jsx?|js?|tsx?|ts?)$",
 };
