@@ -1,8 +1,6 @@
-/*
-
 import { RotatingShape } from "../src/RotatingShape.mjs";
 
-describe("Rotating 3x3 shape", () => {
+xdescribe("Rotating 3x3 shape", () => {
   const shape = new RotatingShape(
     `ABC
      DEF
@@ -33,10 +31,8 @@ describe("Rotating 3x3 shape", () => {
     );
   });
 });
-*/
 
-/*
-describe("Rotating 5x5 shape", () => {
+xdescribe("Rotating 5x5 shape", () => {
   const shape = new RotatingShape(
     `ABCDE
      FGHIJ
@@ -75,4 +71,3 @@ describe("Rotating 5x5 shape", () => {
     );
   });
 });
-*/

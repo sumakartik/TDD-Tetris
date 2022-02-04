@@ -1,5 +1,3 @@
-/*
-
 import { Tetromino } from "../src/Tetromino.mjs";
 
 function distinctOrientations(shape) {
@@ -15,7 +13,7 @@ function distinctOrientations(shape) {
   return distinct;
 }
 
-describe("The T shape", () => {
+xdescribe("The T shape", () => {
   const shape = Tetromino.T_SHAPE;
 
   it("initial orientation", () => {
@@ -46,10 +44,8 @@ describe("The T shape", () => {
     expect(distinctOrientations(shape).size).to.equal(4);
   });
 });
-*/
 
-/*
-describe("The I shape", () => {
+xdescribe("The I shape", () => {
   const shape = Tetromino.I_SHAPE;
 
   it("initial orientation", () => {
@@ -86,10 +82,8 @@ describe("The I shape", () => {
     expect(distinctOrientations(shape).size).to.equal(2);
   });
 });
-*/
 
-/*
-describe("The O shape", () => {
+xdescribe("The O shape", () => {
   const shape = Tetromino.O_SHAPE;
 
   it("initial orientation", () => {
@@ -120,4 +114,3 @@ describe("The O shape", () => {
     expect(distinctOrientations(shape).size).to.equal(1);
   });
 });
-*/

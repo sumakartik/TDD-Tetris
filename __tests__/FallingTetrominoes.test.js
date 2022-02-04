@@ -1,5 +1,3 @@
-/*
-
 import { Board } from "../src/Board.mjs";
 import { Tetromino } from "../src/Tetromino.mjs";
 
@@ -9,7 +7,7 @@ function fallToBottom(board) {
   }
 }
 
-describe("Falling tetrominoes", () => {
+xdescribe("Falling tetrominoes", () => {
   let board;
   beforeEach(() => {
     board = new Board(10, 6);
@@ -58,4 +56,3 @@ describe("Falling tetrominoes", () => {
     );
   });
 });
-*/
