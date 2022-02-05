@@ -1,7 +1,9 @@
 export class Block {
+  shape;
   color;
 
-  constructor(color) {
+  constructor(shape ="X", color="white") {
     this.color = color;
+    this.shape = shape;
   }
 }
