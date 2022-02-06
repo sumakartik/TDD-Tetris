@@ -37,27 +37,23 @@ export class Board {
 
     // ADD ATC
     const atc = this.hasFalling(construct);
-    if (!atc){
+    if (atc){
       throw 'already falling';
     }
 
-
     construct[0][middle] = blockObject;
     this.boardState = construct;
-
   }
 
-  // determines if there 
-  hasFalling(construct){
 
+  // determines if there 
+  hasFalling(){
     // Do not allow new block added to board if any object on board is in falling state
     let falling = false; // ATC defaults to falling
     for (let row = 0; row < this.width; row += 1){
-      construct[row].forEach( x => {if(x.falling === true){falling = true}});
+      this.boardState[row].forEach( x => {if(x.falling === true){falling = true}});
     }
-
     return falling;
-
   }
 
   tick (){
@@ -65,13 +61,18 @@ export class Board {
     // read each line
       // if theres a shape, move it down one line
     const isObj = x => (typeof x) === 'object' ;
+    
 
     let currentArray = this.boardState;
+    const bottom = currentArray.length - 1
 
-    // check for blocks on floor, increment
-  
+    // check for blocks on floor, increment the falling
+
+    let botObjIndex = currentArray[bottom].findIndex(isObj);
+    if(botObjIndex >= 0){currentArray[bottom][botObjIndex].falling = false};
+
     // Start from the bottom of the the matrix and decrement
-    for (let i = currentArray.length - 2; i >= 0; i -= 1){
+    for (let i = bottom - 1; i >= 0; i -= 1){
       // if current array truthy and next array is falsy
       if(currentArray[i].find(isObj) && !currentArray[i+1].find(isObj)){
         // copy current array to lower array
@@ -79,12 +80,16 @@ export class Board {
         // fill the current array with blank line
         currentArray[i] = new Array(this.width).fill('.');
       }
-
       
     }
 
+  
+     
+    this.boardState = currentArray;
 
   }
+
+
   // Checks to see if a board exists, create one if it doesn't.
   validateBoard(){
     if (this.boardState === undefined){
