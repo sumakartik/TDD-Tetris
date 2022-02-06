@@ -29,13 +29,34 @@ export class Board {
     // console.log(this.boardState);
     // const width = this.boardState;
     // console.log(width);
-    
     this.validateBoard();
+
+    // drop it
     const middle = Math.ceil(this.width / 2) - 1;
     const construct = this.boardState;
 
+    // ADD ATC
+    const atc = this.hasFalling(construct);
+    if (!atc){
+      throw 'already falling';
+    }
+
+
     construct[0][middle] = blockObject;
     this.boardState = construct;
+
+  }
+
+  // determines if there 
+  hasFalling(construct){
+
+    // Do not allow new block added to board if any object on board is in falling state
+    let falling = false; // ATC defaults to falling
+    for (let row = 0; row < this.width; row += 1){
+      construct[row].forEach( x => {if(x.falling === true){falling = true}});
+    }
+
+    return falling;
 
   }
 
@@ -43,9 +64,22 @@ export class Board {
     this.validateBoard();
     // read each line
       // if theres a shape, move it down one line
+    const isObj = x => (typeof x) === 'object' ;
+
     let currentArray = this.boardState;
-    
-    for (i = currentArray.length; i > 0; i -= 1){
+
+    // check for blocks on floor, increment
+  
+    // Start from the bottom of the the matrix and decrement
+    for (let i = currentArray.length - 2; i >= 0; i -= 1){
+      // if current array truthy and next array is falsy
+      if(currentArray[i].find(isObj) && !currentArray[i+1].find(isObj)){
+        // copy current array to lower array
+        currentArray[i+1] = currentArray[i];
+        // fill the current array with blank line
+        currentArray[i] = new Array(this.width).fill('.');
+      }
+
       
     }
 
@@ -54,11 +88,11 @@ export class Board {
   // Checks to see if a board exists, create one if it doesn't.
   validateBoard(){
     if (this.boardState === undefined){
-      console.log('Board constructed in current instance.');
+      // console.log('Board constructed in current instance.');
       this.drawCleanBoard()
     }
     else{
-      console.log(`Board Previously Constructed`);
+      // console.log(`Board Previously Constructed`);
     };
   }
 

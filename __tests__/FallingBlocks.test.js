@@ -16,7 +16,7 @@ describe("Falling blocks", () => {
     );
   });
 
-  xdescribe("When a block is dropped", () => {
+  describe("When a block is dropped", () => {
     beforeEach(() => {
       board.drop(new Block("X"));
     });
@@ -29,7 +29,7 @@ describe("Falling blocks", () => {
       );
     });
 
-    xit("it moves down one row per tick", () => {
+    it("it moves down one row per tick", () => {
       board.tick();
 
       expect(board.toString()).toEqualShape(
@@ -39,22 +39,22 @@ describe("Falling blocks", () => {
       );
     });
 
-    xit("at most one block may be falling at a time", () => {
+    it("at most one block may be falling at a time", () => {
       const before = board.toString();
-      expect(() => board.drop(new Block("Y"))).to.throw("already falling");
+      expect(() => board.drop(new Block("Y"))).toThrow("already falling");
       const after = board.toString();
       expect(after).toEqual(before); // TODO: check conversion
     });
   });
 
-  xdescribe("When a block reaches the bottom", () => {
+  describe("When a block reaches the bottom", () => {
     beforeEach(() => {
       board.drop(new Block("X"));
       board.tick();
       board.tick();
     });
 
-    xit("it is still moving on the last row", () => {
+    it("it is still moving on the last row", () => {
       expect(board.toString()).toEqualShape(
         `...
          ...
@@ -63,7 +63,7 @@ describe("Falling blocks", () => {
       expect(
         board.hasFalling(),
         "the player should still be able to move the block"
-      ).to.be.true; // TODO: check if toBe
+      ).to.beTrue; 
     });
 
     xit("it stops when it hits the bottom", () => {
@@ -74,7 +74,7 @@ describe("Falling blocks", () => {
          ...
          .X.`
       );
-      expect(board.hasFalling(), "the block should stop moving").to.be.false;
+      expect(board.hasFalling(), "the block should stop moving").to.beFalse;
     });
   });
 
@@ -97,7 +97,7 @@ describe("Falling blocks", () => {
       expect(
         board.hasFalling(),
         "the player should still be able to move the block"
-      ).to.be.true;
+      ).to.beTrue;
     });
 
     xit("it stops when it hits the other block", () => {
